@@ -19,4 +19,12 @@ public:
 	UPROPERTY(BlueprintReadWrite,EditAnywhere)
 	int32 Score=0;
 	
+	UPROPERTY(BlueprintReadWrite,EditAnywhere)
+	int32 MaxScore=10;
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void Win();
+
+	UFUNCTION(BlueprintCallable)
+	void ResetGIData();
 };

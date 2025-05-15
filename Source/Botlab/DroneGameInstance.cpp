@@ -3,3 +3,7 @@
 
 #include "DroneGameInstance.h"
 
+void UDroneGameInstance::ResetGIData()
+{
+	Score=0;
+}

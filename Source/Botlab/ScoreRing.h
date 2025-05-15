@@ -38,6 +38,9 @@ public:
 	UPROPERTY()
 	UDroneGameInstance* DroneGI;
 
+	UPROPERTY()
+	bool IsAvailable=true;
+
 	UFUNCTION()
 	void OnBoxOverlapBegin(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 

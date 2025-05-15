@@ -28,7 +28,6 @@ void AScoreRing::BeginPlay()
 
 	DroneGI=Cast<UDroneGameInstance>(GetWorld()->GetGameInstance());
 	
-	
 	Box->OnComponentBeginOverlap.AddDynamic(this,&AScoreRing::OnBoxOverlapBegin);
 	
 }
@@ -43,11 +42,19 @@ void AScoreRing::Tick(float DeltaTime)
 void AScoreRing::OnBoxOverlapBegin(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
 	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
-	if (OtherActor && OtherActor->ActorHasTag("Drone"))
+	if (IsAvailable)
 	{
-		if (DroneGI)
+		if (OtherActor && OtherActor->ActorHasTag("Drone"))
 		{
-			DroneGI->Score++;
+			if (DroneGI)
+			{
+				DroneGI->Score++;
+				IsAvailable=false;
+				if (DroneGI->Score==DroneGI->MaxScore)
+				{
+					DroneGI->Win();
+				}
+			}
 		}
 	}
 }
