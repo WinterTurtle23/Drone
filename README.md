@@ -37,56 +37,44 @@ This project was developed as part of a technical assessment for a Drone Simulat
 - Win condition checked after final waypoint
 
 ##  Development Tools
-Blueprint:
+**Blueprint**
 
-Movement (FloatingPawnMovement)
+- Movement (FloatingPawnMovement)
+- Input handling
+- Drone tilt using RInterpTo
 
-Input handling
+**C++**
 
-Drone tilt using RInterpTo
+- Overlap detection
+- Score tracking
+- Win condition
 
-C++:
-
-Overlap detection
-
-Score tracking
-
-Win condition
+---
 
 ## Challenges & Solutions
-Drone Tilt Instability:
-Resolved with FRotator::RInterpTo for smooth directional control
+- Drone Tilt Instability: Resolved with FRotator::RInterpTo for smooth directional control
 
-Falling Through Floor:
-Fixed collision settings and mesh pivot alignment
+- Falling Through Floor: Fixed collision settings and mesh pivot alignment
 
-UE5 Data Layer Packaging Error:
-Removed unused layers and stripped editor-only content for clean packaging
+- UE5 Data Layer Packaging Error: Removed unused layers and stripped editor-only content for clean packaging
 
-## Final Submission Includes
-Unreal Engine Project (.uproject)
-
-Windows Packaged Build
-
-C++ Source Code
-
-Drone Blueprint System
-
-Instructional Documentation
+---
 
 ## Controls
-Key	Action
-W / A / S / D	Move
-Space	Ascend
-Left Ctrl	Descend
-Left Shift	Boost Speed
+**Key	Action**
+- W / A / S / D: Move
+- Space:	Ascend
+- Left Ctrl:	Descend
+- Left Shift:	Boost Speed
+
+---
 
 ## Gameplay Objective
 Fly the drone through the loop checkpoints to increase your score. The game ends when all waypoints are cleared. The drone must avoid collisions and fly with precision.
 
+---
+
 ## Future Improvements
-Add multiplayer racing mode
-
-Integrate login and leaderboard system
-
-Enhance UI feedback and VFX
+- Add multiplayer racing mode
+- Integrate login and leaderboard system
+- Enhance UI feedback and VFX
